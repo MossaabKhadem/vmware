@@ -10,7 +10,7 @@
 
   tasks:
   - name: Gather all registered virtual machines
-    vmware_vm_info:
+    vmware_vm_facts:
       hostname: 172.180.0.200
       username: administrator@vsphere.local
       password: '{{ Your_Password }}'
