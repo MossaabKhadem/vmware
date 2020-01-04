@@ -1,0 +1,19 @@
+---
+- name : Gather all registered virtual machines
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_prompt:
+    - name: "Your_Password"
+      prompt: "Enter_vcenter_password"
+      private: yes
+
+  tasks:
+  - name: Gather all registered virtual machines
+    vmware_vm_info:
+      hostname: 172.180.0.200
+      username: administrator@vsphere.local
+      password: '{{ Your_Password }}'
+      validate_certs: false
+    delegate_to: localhost
+    register: vmfacts
