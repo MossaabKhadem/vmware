@@ -12,7 +12,7 @@
       validate_certs: False
       name: testvm_1
       template: VM1
-      datacenter: LABVMWARE
+      datacenter: vDc_Ansible
       folder: /
       state: poweredoff
       wait_for_ip_address: yes
