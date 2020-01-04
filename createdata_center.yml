@@ -1,0 +1,19 @@
+---
+- name : Create Datacenter
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create Cluster
+    local_action:
+      module: vmware_cluster
+      hostname: 172.180.0.200
+      username: administrator@vsphere.local
+      password: P@ssword
+      datacenter_name: 'vDc_Ansible'
+      cluster_name: C_Ansible
+      enable_ha: yes
+      enable_drs: yes
+      enable_vsan: no
+      validate_certs: no
+#    delegate_to: localhost
