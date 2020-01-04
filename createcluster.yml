@@ -1,0 +1,17 @@
+---
+- name : Create Datacenter
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create Datacenter
+    local_action:
+      module: vmware_datacenter
+      hostname: 172.180.0.200
+      username: administrator@vsphere.local
+      password: P@ssword
+      datacenter_name: 'vDc_Ansible'
+      state: present
+      validate_certs: false
+#    delegate_to: localhost
+#    register: vmfacts
