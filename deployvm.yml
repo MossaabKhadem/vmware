@@ -1,0 +1,18 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Clone the template
+    vmware_guest:
+      hostname: 172.180.0.200
+      username: administrator@vsphere.local
+      password: P@ssword
+      validate_certs: False
+      name: testvm_1
+      template: VM1
+      datacenter: LABVMWARE
+      folder: /
+      state: poweredoff
+      wait_for_ip_address: yes
